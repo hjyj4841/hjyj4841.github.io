@@ -4,8 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>포트폴리오</title>
+    <style>
+      * {
+        margin: 0px;
+      }
+      nav {
+        width: 10%;
+        background-color: yellow;
+        position: fixed; /* 화면 고정 */
+        padding-top: 100px;
+        height: 900px;
+      }
+      header {
+        background-color: red;
+        position: fixed; /* 화면 고정 */
+        width: 100%;
+        height: 80px;
+      }
+      main {
+        background-color: blue;
+        padding-top: 80px;
+        padding-left: 10%;
+      }
+      #backgroundImg > img {
+        width: 100%;
+        position: fixed;
+        filter: opacity(0.8) grayscale(1);
+      }
+    </style>
   </head>
   <body>
-    테스트
+    <nav>
+      <h3>Nav</h3>
+    </nav>
+    <header>
+      <h2>Header</h2>
+    </header>
+    <main>
+      <div id="backgroundImg"><img src="../resource/background_img.jpg" /></div>
+      <h2 style="z-index: 100">Main</h2>
+    </main>
   </body>
 </html>
