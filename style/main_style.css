@@ -1,0 +1,79 @@
+* {
+  margin: 0px;
+}
+
+/* 좌측 메뉴바 */
+nav {
+  width: 200px;
+  position: fixed; /* 화면 고정 */
+  padding-top: 80px;
+  height: 900px;
+  background-color: black;
+  opacity: 0.9;
+  z-index: 1;
+}
+.main_menu {
+  height: 900px;
+  width: 100%;
+}
+.main_menu * {
+  width: 100%;
+  float: left;
+  padding-left: 0;
+}
+.main_menu > ul {
+  margin-top: 50px;
+}
+.main_menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  height: 50px;
+}
+.main_menu a:hover {
+  color: cornflowerblue;
+  font-size: 1.5rem;
+  transition: 0.5s; /* 서서히 변경 */
+}
+.main_menu li {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+
+/* 상단 바 */
+header {
+  position: fixed; /* 화면 고정 */
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(black, black, 85%, transparent);
+  z-index: 1;
+}
+/* 로고 */
+.logo {
+  width: 50px;
+  height: 50px;
+  margin: 20px 70px;
+}
+.logo img {
+  width: 100%;
+  filter: contrast(0);
+}
+
+/* 메인 화면 */
+main {
+  padding-top: 80px;
+  padding-left: 200px;
+  height: 2000px;
+}
+
+/* 배경이미지 */
+.backImg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../resource/background_img.jpg"); /* 임시 이미지 */
+  filter: grayscale(0.7);
+}
