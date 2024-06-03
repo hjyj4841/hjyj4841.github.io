@@ -6,11 +6,12 @@
 nav {
   width: 200px;
   position: fixed; /* 화면 고정 */
-  padding-top: 80px;
+  left: 0px;
+  top: 80px;
   height: 900px;
-  background-color: black;
   opacity: 0.9;
   z-index: 1;
+  background: linear-gradient(black, black, 95%, transparent);
 }
 .main_menu {
   height: 900px;
@@ -27,11 +28,12 @@ nav {
 .main_menu a {
   text-decoration: none;
   color: white;
-  font-size: 1rem;
+  text-shadow: 0px 0px 10px #e5e5e5;
+  font-size: 1.2rem;
   height: 50px;
 }
 .main_menu a:hover {
-  color: cornflowerblue;
+  color: #fca311;
   font-size: 1.5rem;
   transition: 0.5s; /* 서서히 변경 */
 }
@@ -46,9 +48,12 @@ nav {
 /* 상단 바 */
 header {
   position: fixed; /* 화면 고정 */
+  left: 0px;
+  top: 0px;
   width: 100%;
   height: 80px;
-  background: linear-gradient(black, black, 85%, transparent);
+  /* background: linear-gradient(#f2e9e4, #f2e9e4, 95%, transparent);           그라데이션 */
+  background-color: #e5e5e5;
   z-index: 1;
 }
 /* 로고 */
@@ -59,7 +64,8 @@ header {
 }
 .logo img {
   width: 100%;
-  filter: contrast(0);
+  filter: invert(72%) sepia(20%) saturate(4241%) hue-rotate(351deg)
+    brightness(100%) contrast(98%);
 }
 
 /* 메인 화면 */
@@ -67,13 +73,8 @@ main {
   padding-top: 80px;
   padding-left: 200px;
   height: 5000px;
-}
 
-/* 배경이미지 */
-.backImg {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background-image: url("../resource/background_img.jpg"); /* 임시 이미지 */
-  filter: grayscale(0.7);
+  background-image: url("https://picsum.photos/1950/1000"); /* 임시 이미지 */
+  filter: grayscale(1);
+  background-attachment: fixed;
 }
