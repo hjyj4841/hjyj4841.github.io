@@ -1,5 +1,41 @@
 * {
   margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* 상단 바 */
+header {
+  position: fixed; /* 화면 고정 */
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 80px;
+  /* background: linear-gradient(#f2e9e4, #f2e9e4, 95%, transparent);           그라데이션 */
+  background-color: white;
+  z-index: 1;
+}
+/* 로고 */
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-left: 70px;
+  margin-top: 20px;
+  float: left;
+}
+.logo img {
+  width: 100%;
+  /* filter: invert(72%) sepia(20%) saturate(4241%) hue-rotate(351deg)
+    brightness(100%) contrast(98%); */ /* 아이콘 색 변경 */
+}
+.main_title {
+  width: 80%;
+  height: 80px;
+  float: left;
+  line-height: 80px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fca311;
+  text-shadow: 0px 0px 1px gray;
 }
 
 /* 좌측 메뉴바 */
@@ -11,7 +47,7 @@ nav {
   height: 900px;
   opacity: 0.9;
   z-index: 1;
-  background: linear-gradient(black, black, 95%, transparent);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .main_menu {
   height: 900px;
@@ -25,6 +61,13 @@ nav {
 .main_menu > ul {
   margin-top: 50px;
 }
+.main_menu li {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
 .main_menu a {
   text-decoration: none;
   color: white;
@@ -37,44 +80,58 @@ nav {
   font-size: 1.5rem;
   transition: 0.5s; /* 서서히 변경 */
 }
-.main_menu li {
-  list-style: none;
-  width: 100%;
-  text-align: center;
-  height: 50px;
-  line-height: 50px;
-}
-
-/* 상단 바 */
-header {
-  position: fixed; /* 화면 고정 */
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 80px;
-  /* background: linear-gradient(#f2e9e4, #f2e9e4, 95%, transparent);           그라데이션 */
-  background-color: #e5e5e5;
-  z-index: 1;
-}
-/* 로고 */
-.logo {
-  width: 50px;
-  height: 50px;
-  margin: 20px 70px;
-}
-.logo img {
-  width: 100%;
-  filter: invert(72%) sepia(20%) saturate(4241%) hue-rotate(351deg)
-    brightness(100%) contrast(98%);
-}
 
 /* 메인 화면 */
 main {
-  padding-top: 80px;
-  padding-left: 200px;
   height: 5000px;
+  display: flex;
+  justify-content: center;
 
-  background-image: url("https://picsum.photos/1950/1000"); /* 임시 이미지 */
-  filter: grayscale(1);
+  background-image: url("https://picsum.photos/1950/1200"); /* 임시 이미지 */
   background-attachment: fixed;
+}
+section {
+  width: 100%;
+}
+.content {
+  margin-top: 50px;
+  width: 80%;
+  height: 800px;
+  float: right;
+  margin-right: 50px;
+}
+.content > div {
+  margin-top: 80px;
+  color: white;
+  /*  border: 5px solid white; */
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.content_image_box {
+  height: 100%;
+  width: 30%;
+  background-image: url("https://picsum.photos/500/800");
+  border: 5px groove #fca311;
+}
+.content:nth-child(even) .content_image_box {
+  float: right;
+}
+.content:nth-child(odd) .content_image_box {
+  float: left;
+}
+.content_text_box {
+  float: left;
+  width: 65%;
+  margin: 20px;
+}
+.content p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px gray;
+}
+.content h1 {
+  text-shadow: 0px 0px 3px gray;
+  font-size: 3rem;
+  color: #fca311;
 }
