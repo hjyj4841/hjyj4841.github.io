@@ -27,35 +27,30 @@ header {
 /* nav 좌측 메뉴 바 fixed */
 nav {
   position: fixed;
-  width: 15%;
+  width: 200px;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
 
   display: flex;
   flex-direction: column;
-}
 
-nav ul {
-  flex: 1;
   padding-top: 80px;
 }
+
 nav a {
+  height: 60px;
   text-align: center;
-  text-decoration: none;
   font-size: 1.5rem;
-  line-height: 2;
   color: white;
-  height: 100%;
   display: block;
 
-  /* 영역 넘어갈 시 "..."으로 표기 */
-  white-space: pre-line;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 nav a:hover {
   color: orange;
-  font-size: 2rem;
+  font-size: 1.8rem;
   /* 서서히 변경 */
   transition: 0.5s;
 }
@@ -68,8 +63,7 @@ nav a:hover {
 
 /* main 구역 */
 main {
-  width: 85%;
-  margin-left: 15%;
+  padding-left: 200px;
 }
 
 /* section */
@@ -119,10 +113,6 @@ section:nth-child(even) {
   margin-top: 20px;
 
   font-size: 1.5rem;
-  line-height: 2.3rem;
+  line-height: 1.5;
   color: white;
-  /* ====================================================수정 요망====================================================== */
-  white-space: pre-line;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
