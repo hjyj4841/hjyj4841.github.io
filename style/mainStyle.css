@@ -1,52 +1,95 @@
 html {
   scroll-behavior: smooth; /* 페이지 내 이동 시 부드럽게 이동 */
   overflow: hidden; /* 스크롤바 안보이게 하기 위함 */
+
+  font-family: "Viga", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-/* html,
-body {
-  display: block;
-  width: 100%;
-  height: 100%;
-} */
+/* 죄측 메뉴 */
 nav {
-  height: 100vh;
   position: fixed;
+  z-index: 1;
+
   display: flex;
   align-items: center;
-  margin: 30px;
-  z-index: 1;
+
+  height: 100vh;
+  width: 200px;
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+
+  height: 350px;
+  width: 100%;
 }
 nav li {
-  width: 150px;
-  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1 auto;
+
+  width: 100%;
 }
+/* li 안에 동그란거 */
 nav li > div {
-  width: 5px;
-  height: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20%;
+  height: 100%;
+}
+.circle {
+  width: 10px;
+  height: 10px;
+
   border-radius: 50%;
   background-color: gray;
+
   transition: 0.3s;
-  margin-right: 5px;
+
+  position: absolute;
+
+  z-index: 2;
 }
-nav li > a {
-  margin: 10px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  transition: 0.3s;
-  color: gray;
-}
-nav li:nth-child(1) > div {
-  background-color: rgb(74, 171, 250);
+
+/* ring 관련 */
+.circle + div {
   width: 8px;
   height: 8px;
+  border-radius: 50%;
+}
+.ring {
+  animation: circleScale 1s linear infinite;
+  box-shadow: 0px 0px 3px 2px rgb(74, 171, 250);
+}
+
+/* li 안에 a 태그 관련 */
+nav li > a {
+  width: 60%;
+
+  font-size: 1.3rem;
+  /* font-weight: bold; */
+  color: gray;
+
+  transition: 0.3s;
+
+  font-family: "Viga", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 페이지 로드 시 처음 적용 해놓기 위함 */
+li:nth-child(1) .circle {
+  background-color: rgb(74, 171, 250);
 }
 nav li:nth-child(1) > a {
   color: rgb(74, 171, 250);
 }
 
+/* 메인 화면 단 */
 main {
   height: 100%;
   width: 100%;
@@ -55,25 +98,53 @@ main {
 main > section {
   height: 100vh;
   width: 100%;
+
+  /* 임시로 넣어 놓은 배경 이미지 추후 삭제 */
   background-size: cover;
   background-position: center;
 }
 
-main > section:nth-child(1) {
-  background-color: white;
+/* 1번 contents - Home */
+#con1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  background-color: black;
 }
-#con1 > h1 {
+#con1 > div {
+  width: 1220px;
+}
+#con1 div:nth-child(2) {
+  align-self: center;
+}
+#con1 div:nth-child(3) {
+  align-self: flex-end;
+}
+#con1 h1 {
+  display: inline;
+  user-select: none;
+
+  padding-right: 50px;
+  margin-top: 50px;
+
   font-weight: bold;
   font-size: 10rem;
-  background-image: url(../resource/pattern.jpg);
+  color: white;
+
+  /* text에 이미지 넣기 위함 */
+  /* background-image: url(../resource/pattern.jpg);
   background-size: cover;
   background-position: center;
-  display: inline;
-
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  color: transparent; */
 }
+
+#con1 > div:nth-child(1) > h1 {
+  animation: fakeKey 0.8s step-end infinite;
+}
+
 main > section:nth-child(2) {
   background-image: url(../resource/test2.jpg);
 }
@@ -86,3 +157,33 @@ main > section:nth-child(4) {
 main > section:nth-child(5) {
   background-image: url(../resource/test5.jpg);
 }
+
+@keyframes circleScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+@keyframes fakeKey {
+  0% {
+    border-right: none;
+  }
+  50% {
+    border-right: 40px solid;
+  }
+}
+
+/* @keyframes move1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50%, 50%);
+  }
+} */
