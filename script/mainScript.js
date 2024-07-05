@@ -1,13 +1,14 @@
 const mHtml = document.querySelector("html");
+const nav = document.querySelector("nav");
 const ls = document.querySelectorAll("nav li > a");
 const circles = document.querySelectorAll(".circle");
 const circleRings = document.querySelectorAll(".circle + div");
 const sections = document.querySelectorAll("main > section");
-const maintexts = document.querySelectorAll("#con1 div > h1 ");
+const maintexts = document.querySelectorAll("#home div > h1 ");
 
 let page = 0; // 현재 표시되는 페이지
 const lastPage = sections.length - 1; // 마지막 페이지(현재는 mian > div)
-const testString = "HELLO, WORLD!";
+const mainStr = ["WELCOME TO", "DONG YEOP'S", "PORTPOLIO"];
 let homeTimer = 0;
 
 // 현재 위치한 윈도우창의 상단 부분으로 이동
@@ -33,23 +34,23 @@ function scrollTop(el, value) {
 // Home에 텍스트 이벤트 들어가는 함수
 function mainTextAnimation(count) {
   setTimeout(() => {
-    maintexts[count].textContent += testString[homeTimer];
+    maintexts[count].textContent += mainStr[count][homeTimer];
     homeTimer++;
 
-    if (homeTimer < testString.length) mainTextAnimation(count);
+    if (homeTimer < mainStr[count].length) mainTextAnimation(count);
     else {
       maintexts[count].style.animation = "none";
       // 2번 3번 애니메이션 이어지도록
       homeTimer = 0;
       count++;
       if (count < 3) {
-        maintexts[count].style.animation = "fakeKey 0.8s step-end infinite";
+        maintexts[count].style.animation = "fakeKey 0.5s step-end infinite";
         mainTextAnimation(count);
       } //else {   // 이어서 나올 위치 이동 애니메이션 구현 중
       //   maintexts[0].parentNode.style.animation = "move1 1s linear forwards";
       // }
     }
-  }, 200);
+  }, 100);
 }
 
 // scroll 못하게 막는 event
@@ -77,6 +78,11 @@ window.addEventListener("wheel", function (e) {
 // scroll 되면 해당 메뉴 text color 변경
 window.addEventListener("scroll", function (e) {
   for (let i = 0; i <= lastPage; i++) {
+    if (page != 0) {
+      nav.style.animation = "navMove2 1s forwards";
+    } else {
+      nav.style.animation = "navMove1 1s forwards";
+    }
     // scroll 시 화면에 표시되는 영역에 해당하는 li 색 변경
     if (sections[i].getBoundingClientRect().top == 0) {
       ls[i].style.color = "rgb(74, 171, 250)";

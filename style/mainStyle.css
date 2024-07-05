@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth; /* 페이지 내 이동 시 부드럽게 이동 */
   overflow: hidden; /* 스크롤바 안보이게 하기 위함 */
 
-  font-family: "Viga", sans-serif;
+  font-family: "Viga", "Jua", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -14,8 +14,9 @@ nav {
   display: flex;
   align-items: center;
 
-  height: 100vh;
+  height: 0vh;
   width: 200px;
+  overflow: hidden;
 }
 nav ul {
   display: flex;
@@ -104,58 +105,112 @@ main > section {
   background-position: center;
 }
 
-/* 1번 contents - Home */
-#con1 {
+/* 1번 contents - home */
+#home {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-
-  background-color: black;
+  justify-content: space-evenly;
 }
-#con1 > div {
-  width: 1220px;
-}
-#con1 div:nth-child(2) {
+#home div {
   align-self: center;
 }
-#con1 div:nth-child(3) {
-  align-self: flex-end;
-}
-#con1 h1 {
+#home h1 {
   display: inline;
   user-select: none;
 
-  padding-right: 50px;
-  margin-top: 50px;
-
   font-weight: bold;
-  font-size: 10rem;
-  color: white;
+  font-size: 6vw;
+}
 
-  /* text에 이미지 넣기 위함 */
-  /* background-image: url(../resource/pattern.jpg);
+#home > div:nth-child(1) > h1 {
+  animation: fakeKey 0.5s step-end infinite;
+}
+
+/* 2번 contents - introduce */
+#introduce {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#introduce > div {
+  display: flex;
+
+  width: 70%;
+  height: 100%;
+}
+#introduce > div > div {
+  display: flex;
+}
+#introduce > div > div:first-child {
+  flex: 1 auto;
+
+  background-image: url(../resource/introduce_img.jpg);
   background-size: cover;
   background-position: center;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent; */
 }
 
-#con1 > div:nth-child(1) > h1 {
-  animation: fakeKey 0.8s step-end infinite;
+/* introduce 안에 텍스트 */
+#introduceTextBox {
+  flex: 2 auto;
+
+  display: flex;
+  flex-direction: column;
 }
 
-main > section:nth-child(2) {
-  background-image: url(../resource/test2.jpg);
+#introduceTextBox > div:first-child {
+  flex: 1 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+#introduceTextBox > div:first-child > h1 {
+  font-size: 4vw;
+  color: gray;
+}
+
+#introduceTextBox > div:last-child {
+  flex: 15 auto;
+
+  display: flex;
+}
+#introduceTextBox > div:last-child > span {
+  flex: 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#introduceTextBox > div:last-child > span > div {
+  font-size: 3vh;
+
+  padding-left: 20%;
+}
+
+#introduceTextBox > div:last-child > span > div > p {
+  display: inline;
+}
+
+.variable {
+  color: #0528de;
+}
+.modifier {
+  color: #7f0055;
+}
+.value {
+  color: #2a00ff;
+}
+
+/* 임시로 넣은 배경 색 추후 삭제 예정 */
 main > section:nth-child(3) {
-  background-image: url(../resource/test3.jpg);
+  background-color: lightgoldenrodyellow;
 }
 main > section:nth-child(4) {
-  background-image: url(../resource/test4.png);
+  background-color: lightcoral;
 }
 main > section:nth-child(5) {
-  background-image: url(../resource/test5.jpg);
+  background-color: lightsalmon;
 }
 
 @keyframes circleScale {
@@ -175,7 +230,25 @@ main > section:nth-child(5) {
     border-right: none;
   }
   50% {
-    border-right: 40px solid;
+    border-right: 10px solid;
+  }
+}
+
+@keyframes navMove1 {
+  0% {
+    height: 100vh;
+  }
+  100% {
+    height: 0vh;
+  }
+}
+
+@keyframes navMove2 {
+  0% {
+    height: 0vh;
+  }
+  100% {
+    height: 100vh;
   }
 }
 
@@ -187,3 +260,10 @@ main > section:nth-child(5) {
     transform: translate(50%, 50%);
   }
 } */
+
+/* width: 750xp 이하일 때 변경할 css */
+@media screen and (max-width: 1080px) {
+  nav {
+    display: none;
+  }
+}
