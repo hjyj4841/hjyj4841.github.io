@@ -151,55 +151,60 @@ main > section {
 }
 
 /* introduce 안에 텍스트 */
-#introduceTextBox {
+#introduceContent {
   flex: 2 auto;
 
   display: flex;
   flex-direction: column;
 }
 
-#introduceTextBox > div:first-child {
+#introduceTitle {
   flex: 1 auto;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#introduceTextBox > div:first-child > h1 {
+#introduceTitle > h1 {
   font-size: 4vw;
   color: gray;
 }
 
-#introduceTextBox > div:last-child {
+#introduceTextBox {
   flex: 15 auto;
 
   display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
 }
-#introduceTextBox > div:last-child > span {
-  flex: 1 auto;
+#introduceTextBox > div {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+
+  justify-content: flex-end;
 }
 
-#introduceTextBox > div:last-child > span > div {
-  font-size: 3vh;
+#introduceTextBox > div > div {
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
 
-  padding-left: 20%;
-}
+  position: absolute;
 
-#introduceTextBox > div:last-child > span > div > p {
-  display: inline;
+  font-size: 10rem;
 }
+#introduceTextBox > div > div:nth-child(2) {
+  transform: rotate(270deg) skewX(45deg);
+  transform-origin: top right;
 
-.variable {
-  color: #0528de;
+  height: 150px;
 }
-.modifier {
-  color: #7f0055;
-}
-.value {
-  color: #2a00ff;
+#introduceTextBox > div > div:nth-child(3) {
+  transform: rotate(90deg) skewY(45deg);
+  transform-origin: top right;
+
+  width: 150px;
 }
 
 /* 임시로 넣은 배경 색 추후 삭제 예정 */
