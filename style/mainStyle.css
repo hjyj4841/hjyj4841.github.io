@@ -143,7 +143,7 @@ main > section {
   display: flex;
 }
 #introduce > div > div:first-child {
-  flex: 1 auto;
+  flex: 1;
 
   background-image: url(../resource/introduce_img.jpg);
   background-size: cover;
@@ -152,14 +152,14 @@ main > section {
 
 /* introduce 안에 텍스트 */
 #introduceContent {
-  flex: 2 auto;
+  flex: 3;
 
   display: flex;
   flex-direction: column;
 }
 
 #introduceTitle {
-  flex: 1 auto;
+  flex: 1;
 
   display: flex;
   justify-content: center;
@@ -171,40 +171,61 @@ main > section {
 }
 
 #introduceTextBox {
-  flex: 15 auto;
-
+  flex: 8;
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
+  flex-direction: column;
 }
+
 #introduceTextBox > div {
   display: flex;
 
-  justify-content: flex-end;
-}
-
-#introduceTextBox > div > div {
-  width: 300px;
-  height: 300px;
   border: 1px solid;
-
-  position: absolute;
-
-  font-size: 10rem;
 }
-#introduceTextBox > div > div:nth-child(2) {
-  transform: rotate(270deg) skewX(45deg);
-  transform-origin: top right;
 
-  height: 150px;
+#introduceTextBox > div:first-child {
+  flex: 3;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-#introduceTextBox > div > div:nth-child(3) {
-  transform: rotate(90deg) skewY(45deg);
-  transform-origin: top right;
 
-  width: 150px;
+#introduceTextBox > div:first-child > h1 {
+  font-size: 3vw;
+}
+
+#introduceTextBox > div:first-child > p {
+  font-size: 1vw;
+}
+
+#introduceTextBox > div:last-child {
+  flex: 1;
+}
+
+#introduceTextBox > div:last-child > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#introduceTextBox > div:last-child > div > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#introduceTextBox > div:last-child > div:last-child > div {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#introduceTextBox i {
+  font-size: 2vw;
+  color: gray;
+}
+
+#introduceTextBox span,
+#introduceTextBox a {
+  font-size: 1.5vw;
 }
 
 /* 임시로 넣은 배경 색 추후 삭제 예정 */
