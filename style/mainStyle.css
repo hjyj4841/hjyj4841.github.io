@@ -268,7 +268,16 @@ main > section {
   width: 90%;
   height: 100%;
 }
-#informationContent > div > button {
+
+#informationContent > div > div:first-child,
+#informationContent > div > div:last-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+}
+
+#informationContent button {
   background-color: transparent;
   border: none;
   padding: 10px;
@@ -307,7 +316,50 @@ main > section {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: red;
+}
+
+#infoEdu {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: none;
+
+  z-index: 1;
+}
+#infoEdu > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#infoEdu > div:last-child {
+  align-items: flex-end;
+}
+
+#informationContent h2 {
+  font-size: 2rem;
+  color: skyblue;
+}
+
+#infoEdu > div > div > div {
+  padding-top: 20px;
+}
+
+#infoEdu > div p {
+  font-size: 1.5rem;
+}
+
+#infoEdu > div span {
+  font-size: 1rem;
+  color: gray;
+}
+
+#infoCer {
+  display: flex;
+  flex-direction: column;
 }
 
 /* 임시로 넣은 배경 색 추후 삭제 예정 */
@@ -356,15 +408,6 @@ main > section:nth-child(5) {
     height: 100vh;
   }
 }
-
-/* @keyframes move1 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50%, 50%);
-  }
-} */
 
 /* width: 750xp 이하일 때 변경할 css */
 @media screen and (max-width: 1080px) {
