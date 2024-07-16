@@ -298,6 +298,8 @@ main > section {
   padding-left: 25px;
   cursor: pointer;
 
+  transition: 0.5s;
+
   color: gray;
 }
 #informationSelect > div > i {
@@ -306,11 +308,12 @@ main > section {
 #informationSelect > div > span {
   padding-top: 8px;
 }
+#informationSelect > div:first-child {
+  color: rgb(74, 171, 250);
+}
 #informationText {
   flex: 8;
   position: relative;
-
-  border: 1px solid green;
 }
 #informationText > div {
   position: absolute;
@@ -321,22 +324,19 @@ main > section {
 #infoEdu {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  justify-content: center;
 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: none;
+  background-color: white;
 
   z-index: 1;
 }
 #infoEdu > div {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-#infoEdu > div:last-child {
-  align-items: flex-end;
+  align-items: center;
+
+  padding: 30px;
 }
 
 #informationContent h2 {
@@ -344,14 +344,10 @@ main > section {
   color: skyblue;
 }
 
-#infoEdu > div > div > div {
-  padding-top: 20px;
-}
-
 #infoEdu > div p {
+  padding: 10px 0px 5px 0px;
   font-size: 1.5rem;
 }
-
 #infoEdu > div span {
   font-size: 1rem;
   color: gray;
@@ -360,6 +356,37 @@ main > section {
 #infoCer {
   display: flex;
   flex-direction: column;
+}
+#infoCer > div {
+  display: flex;
+  padding: 20px;
+}
+#infoCer > div > div {
+  align-self: center;
+}
+#infoCer > div > div:first-child {
+  color: gray;
+  font-size: 3rem;
+}
+#infoCer p {
+  font-size: 1.5rem;
+  padding: 10px 0px 5px 0px;
+}
+#infoCer span {
+  color: gray;
+}
+#infoCer > div > div:last-child {
+  padding-left: 20px;
+}
+
+#infoCareer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#infoCareer h1 {
+  color: gray;
+  font-size: 5rem;
 }
 
 /* 임시로 넣은 배경 색 추후 삭제 예정 */

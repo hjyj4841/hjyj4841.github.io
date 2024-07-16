@@ -5,6 +5,8 @@ const circles = document.querySelectorAll(".circle");
 const circleRings = document.querySelectorAll(".circle + div");
 const sections = document.querySelectorAll("main > section");
 const maintexts = document.querySelectorAll("#home div > h1 ");
+const infoSelects = document.querySelectorAll("#informationSelect > div");
+const infoTexts = document.querySelectorAll("#informationText > div");
 
 let page = 0; // 현재 표시되는 페이지
 const lastPage = sections.length - 1; // 마지막 페이지(현재는 mian > div)
@@ -107,3 +109,22 @@ for (let i = 0; i <= lastPage; i++) {
 mainTextAnimation(0);
 // 페이지 로드시 html 상단으로 이동
 scrollTop(mHtml, 0);
+
+// information select 박스 아이콘 색상 변경
+for (let i = 0; i < infoSelects.length; i++) {
+  infoSelects[i].addEventListener("click", function () {
+    if (i == 0) {
+      infoSelects[0].style.color = "rgb(74, 171, 250)";
+      infoSelects[1].style.color = "gray";
+      infoSelects[2].style.color = "gray";
+    } else if (i == 1) {
+      infoSelects[0].style.color = "gray";
+      infoSelects[1].style.color = "rgb(74, 171, 250)";
+      infoSelects[2].style.color = "gray";
+    } else {
+      infoSelects[0].style.color = "gray";
+      infoSelects[1].style.color = "gray";
+      infoSelects[2].style.color = "rgb(74, 171, 250)";
+    }
+  });
+}
