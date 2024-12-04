@@ -1,445 +1,219 @@
 html {
   scroll-behavior: smooth; /* 페이지 내 이동 시 부드럽게 이동 */
-  overflow: hidden; /* 스크롤바 안보이게 하기 위함 */
-
-  font-family: "Viga", "Jua", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
-/* 죄측 메뉴 */
-nav {
+
+/* 상단 내비게이션 부분 */
+header {
   position: fixed;
-  z-index: 1;
-
+  right: 0;
+  padding-right: 50px;
+}
+nav > ul {
   display: flex;
-  align-items: center;
-
-  height: 0vh;
-  width: 200px;
-  overflow: hidden;
+  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0px 0px 20px 20px;
 }
-nav ul {
-  display: flex;
-  flex-direction: column;
-
-  height: 350px;
-  width: 100%;
+nav > ul > li {
+  padding: 20px 40px 10px 40px;
 }
-nav li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1 auto;
-
-  width: 100%;
-}
-/* li 안에 동그란거 */
-nav li > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 20%;
-  height: 100%;
-}
-.circle {
-  width: 10px;
-  height: 10px;
-
-  border-radius: 50%;
-  background-color: gray;
-
-  transition: 0.3s;
-
-  position: absolute;
-
-  z-index: 2;
-}
-
-/* ring 관련 */
-.circle + div {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-.ring {
-  animation: circleScale 1s linear infinite;
-  box-shadow: 0px 0px 3px 2px rgb(74, 171, 250);
-}
-
-/* li 안에 a 태그 관련 */
-nav li > a {
-  width: 60%;
-
-  font-size: 1.3rem;
-  /* font-weight: bold; */
-  color: gray;
-
-  transition: 0.3s;
-
-  font-family: "Viga", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* 페이지 로드 시 처음 적용 해놓기 위함 */
-li:nth-child(1) .circle {
-  background-color: rgb(74, 171, 250);
-}
-nav li:nth-child(1) > a {
-  color: rgb(74, 171, 250);
-}
-
-/* 메인 화면 단 */
-main {
-  height: 100%;
-  width: 100%;
-}
-
-main > section {
-  height: 100vh;
-  width: 100%;
-
-  /* 임시로 넣어 놓은 배경 이미지 추후 삭제 */
-  background-size: cover;
-  background-position: center;
-}
-
-/* 1번 contents - home */
-#home {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-#home div {
-  align-self: center;
-}
-#home h1 {
-  display: inline;
-  user-select: none;
-
+nav a {
+  color: rgb(189, 189, 189);
   font-weight: bold;
-  font-size: 6vw;
+  transition: 0.2s;
+}
+nav a:hover {
+  color: white;
 }
 
-#home > div:nth-child(1) > h1 {
-  animation: fakeKey 0.5s step-end infinite;
-}
-
-/* 2번 contents - introduce */
-#introduce {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#introduce > div {
-  display: flex;
-
-  width: 70%;
-  height: 100%;
-}
-#introduce > div > div {
-  display: flex;
-}
-#introduce > div > div:first-child {
-  flex: 1;
-
-  background-image: url(../resource/introduce_img.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-/* introduce 안에 텍스트 */
-#introduceContent {
-  flex: 3;
-
-  display: flex;
-  flex-direction: column;
-}
-
-#introduceTitle {
-  flex: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#introduceTitle > h1,
-#informationTitle > h1 {
-  font-size: 3vw;
-  color: gray;
-}
-
-#introduceTextBox {
-  flex: 8;
-  display: flex;
-  flex-direction: column;
-}
-
-#introduceTextBox > div {
-  display: flex;
-}
-
-#introduceTextBox > div:first-child {
-  flex: 4;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#introduceTextBox > div:first-child > h1 {
-  font-size: 3vw;
-}
-
-#introduceTextBox > div:first-child > p {
-  font-size: 1vw;
-}
-
-#introduceTextBox > div:last-child {
-  flex: 1;
-}
-
-#introduceTextBox > div:last-child > div {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-#introduceTextBox > div:last-child > div:last-child {
-  flex: 4;
-}
-
-#introduceTextBox > div:last-child > div > div {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#introduceTextBox > div:last-child > div:last-child > div {
-  align-items: center;
-  justify-content: flex-start;
-}
-
-#introduceTextBox i {
-  font-size: 1.5vw;
-  color: gray;
-}
-
-#introduceTextBox span,
-#introduceTextBox a {
-  font-size: 1vw;
-}
-
-/* 3번 contents - information */
-#information {
+/* home-section */
+#home-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  width: 100%;
+  height: 100vh;
+  background-image: url(../resource/main-img.jpg);
 }
-/* information - 제목 부분 */
-#informationTitle {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* information - 콘텐츠 부분 */
-#informationContent {
-  flex: 6;
-  display: flex;
-  justify-content: center;
-  width: 70%;
-}
-#informationContent > div {
-  display: flex;
-  justify-content: space-around;
-
-  width: 70%;
-  height: 100%;
-}
-#informationContent > div > div {
-  display: flex;
-  flex-direction: column;
-
-  width: 90%;
-  height: 100%;
-}
-
-#informationContent > div > div:first-child,
-#informationContent > div > div:last-child {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: auto;
-}
-
-#informationContent button {
-  background-color: transparent;
-  border: none;
+#home-section > div {
   padding: 10px;
 
-  cursor: pointer;
-  font-size: 2rem;
-  color: gray;
+  color: white;
+  font-weight: 600;
 }
-#informationSelect {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-#informationSelect > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 25px;
-  cursor: pointer;
-
-  transition: 0.5s;
-
-  color: gray;
-}
-#informationSelect > div > i {
-  font-size: 1.5rem;
-}
-#informationSelect > div > span {
-  padding-top: 8px;
-}
-#informationSelect > div:first-child {
-  color: rgb(74, 171, 250);
-}
-#informationText {
-  flex: 8;
-  position: relative;
-}
-#informationText > div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-#infoEdu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background-color: white;
-
-  z-index: 1;
-}
-#infoEdu > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  padding: 30px;
-}
-
-#informationContent h2 {
-  font-size: 2rem;
-  color: skyblue;
-}
-
-#infoEdu > div p {
-  padding: 10px 0px 5px 0px;
-  font-size: 1.5rem;
-}
-#infoEdu > div span {
-  font-size: 1rem;
-  color: gray;
-}
-
-#infoCer {
-  display: flex;
-  flex-direction: column;
-}
-#infoCer > div {
-  display: flex;
-  padding: 20px;
-}
-#infoCer > div > div {
-  align-self: center;
-}
-#infoCer > div > div:first-child {
-  color: gray;
+#home-section > div:nth-child(1) {
   font-size: 3rem;
 }
-#infoCer p {
-  font-size: 1.5rem;
-  padding: 10px 0px 5px 0px;
-}
-#infoCer span {
-  color: gray;
-}
-#infoCer > div > div:last-child {
-  padding-left: 20px;
+#home-section > div:nth-child(2) {
+  font-size: 2rem;
 }
 
-#infoCareer {
+/* about-section */
+#about-section {
   display: flex;
+  padding: 100px 0;
+}
+#about-section > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#about-section > div:nth-child(1) {
+  flex: 2 auto;
+  align-items: center;
+}
+#about-section > div:nth-child(1) > p {
+  font-size: 2.3rem;
+  padding-bottom: 5px;
+  border-bottom: 2px solid gainsboro;
+  color: black;
+}
+#about-section > div:nth-child(2) {
+  flex: 3 auto;
+}
+#about-section > div:nth-child(2) > p {
+  padding: 5px 0;
+}
+#about-section > div:nth-child(2) > p:first-child {
+  padding: 20px 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: burlywood;
+}
+/* middle section 공통 */
+.middle-section {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#infoCareer h1 {
+.middle-section > div:nth-of-type(1) {
+  padding: 30px 0;
+}
+.middle-section > div:nth-child(1) > p {
+  padding-bottom: 10px;
+  font-size: 2.3rem;
+}
+
+/* skills */
+#skills-section {
+  background-color: gainsboro;
+}
+#skills-section > div:nth-child(1) > p {
+  border-bottom: 2px solid gray;
+}
+.skill-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.skill-content > p {
+  padding-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
   color: gray;
-  font-size: 5rem;
+}
+.skill-content > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.skill-content > div > img {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  object-fit: contain;
 }
 
-/* 임시로 넣은 배경 색 추후 삭제 예정 */
-main > section:nth-child(4) {
-  background-color: lightcoral;
+/* career-section */
+#career-section > div:nth-child(1) > p {
+  border-bottom: 2px solid burlywood;
 }
-main > section:nth-child(5) {
-  background-color: lightsalmon;
+#career-box {
+  display: flex;
 }
-
-@keyframes circleScale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(2);
-  }
+.career-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 50px 0;
 }
-
-@keyframes fakeKey {
-  0% {
-    border-right: none;
-  }
-  50% {
-    border-right: 10px solid;
-  }
+.career-content > p {
+  align-self: center;
+  font-size: 1.5rem;
+  padding: 20px;
 }
-
-@keyframes navMove1 {
-  0% {
-    height: 100vh;
-  }
-  100% {
-    height: 0vh;
-  }
+.career-content > div {
+  padding: 10px;
+}
+.career-content > div > p:nth-of-type(1) {
+  padding-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.career-content > div > p > span {
+  font-size: 1rem;
+  color: gray;
+  font-weight: normal;
 }
 
-@keyframes navMove2 {
-  0% {
-    height: 0vh;
-  }
-  100% {
-    height: 100vh;
-  }
+/* projects-section */
+#projects-section {
+  background-color: burlywood;
+}
+#projects-section > div:nth-child(1) > p {
+  border-bottom: 2px solid white;
+}
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.project-content > h3 {
+  padding: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.project-content > h3 > span {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+.project-content > h3 > span:hover {
+  text-decoration: underline;
+}
+.project-content > div {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 3px 3px 5px black;
+}
+.project-content > div > img {
+  width: 500px;
+  height: 300px;
+  object-fit: contain;
+  padding: 20px;
+}
+.project-content > div > div {
+  padding: 20px;
+}
+.project-content > div > div > p {
+  padding: 5px 0;
+}
+.project-content > div > div > p > span {
+  font-weight: 600;
 }
 
-/* width: 750xp 이하일 때 변경할 css */
-@media screen and (max-width: 1080px) {
-  nav {
-    display: none;
-  }
+/* Contact */
+#contact-section > div:nth-child(1) > p {
+  border-bottom: 2px solid gainsboro;
+}
+.contact-content > p {
+  font-size: 1.3rem;
+  padding: 15px;
+}
+.contact-content > p > a:hover {
+  text-decoration: underline;
 }
