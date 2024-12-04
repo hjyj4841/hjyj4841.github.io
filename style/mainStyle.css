@@ -1,5 +1,10 @@
 html {
   scroll-behavior: smooth; /* 페이지 내 이동 시 부드럽게 이동 */
+
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* 상단 내비게이션 부분 */
