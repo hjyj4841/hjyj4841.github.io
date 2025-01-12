@@ -222,3 +222,10 @@ nav a:hover {
 .contact-content > p > a:hover {
   text-decoration: underline;
 }
+
+.pdf-link {
+  color: gray;
+}
+.pdf-link:hover {
+  color: blue;
+}
