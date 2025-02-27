@@ -10,25 +10,31 @@ html {
 /* 상단 내비게이션 부분 */
 header {
   position: fixed;
-  right: 0;
-  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 10px;
+  background-color: rgba(85, 85, 85, 0.8);
+  transition: 0.5s;
+}
+header div{
+  color: white;
+  font-weight: bold;
+  padding: 20px 40px 10px 40px;
 }
 nav > ul {
   display: flex;
-  padding-bottom: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 0px 0px 20px 20px;
 }
 nav > ul > li {
   padding: 20px 40px 10px 40px;
 }
 nav a {
-  color: rgb(189, 189, 189);
+  color: white;
   font-weight: bold;
   transition: 0.2s;
 }
 nav a:hover {
-  color: white;
+  color: #D9E4DD;
 }
 
 /* home-section */
@@ -38,53 +44,50 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(../resource/main-img.jpg);
-  text-shadow: 3px 3px 3px black;
+  background-color: #FBF7F0;
 }
 #home-section > div {
-  padding: 10px;
-
-  color: white;
+  padding: 15px;
+  color: #FBF7F0;
   font-weight: 600;
+  transition: 1s;
 }
-#home-section > div:nth-child(1) {
-  font-size: 3rem;
-}
+#home-section > div:nth-child(1),
 #home-section > div:nth-child(2) {
+  font-size: 2.5rem;
+}
+#home-section > div:nth-child(3) {
+  padding: 40px;
   font-size: 2rem;
 }
 
 /* about-section */
 #about-section {
   display: flex;
-  padding: 100px 0;
-}
-#about-section > div {
-  display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center ;
+  padding-top: 100px;
+  overflow: hidden;
 }
-#about-section > div:nth-child(1) {
-  flex: 2 auto;
-  align-items: center;
-}
-#about-section > div:nth-child(1) > p {
+
+#about-title > p {
   font-size: 2.3rem;
-  padding-bottom: 5px;
-  border-bottom: 2px solid gainsboro;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #CDC9C3;
   color: black;
 }
-#about-section > div:nth-child(2) {
-  flex: 3 auto;
+#about-detail pre{
+  font-size: 1.6rem;
+  padding: 30px;
+  text-align: center;
+  line-height: 2.5rem;
+  color: gray;
 }
-#about-section > div:nth-child(2) > p {
-  padding: 5px 0;
-}
-#about-section > div:nth-child(2) > p:first-child {
-  padding: 20px 0;
-  font-size: 1.8rem;
+
+.about-text{
+  color: #555555;
   font-weight: bold;
-  color: burlywood;
 }
 /* middle section 공통 */
 .middle-section {
@@ -92,9 +95,10 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .middle-section > div:nth-of-type(1) {
-  padding: 30px 0;
+  padding-top: 100px;
 }
 .middle-section > div:nth-child(1) > p {
   padding-bottom: 10px;
@@ -103,39 +107,64 @@ nav a:hover {
 
 /* skills */
 #skills-section {
-  background-color: gainsboro;
+  background-color: #D9E4DD;
 }
-#skills-section > div:nth-child(1) > p {
+#skills-title > p {
   border-bottom: 2px solid gray;
+  text-align: center;
+}
+#skills-box{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 40px;
+  padding-bottom: 100px;
 }
 .skill-content {
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 20px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  box-shadow: 1rem 1rem 1rem 0 gray;
+}
+
+.skill-content > div {
+  width: 80%;
+}
+.skill-content > div > p {
+  width: 100%;
+  border-bottom: 1px solid gainsboro;
+  font-size: 1rem;
+  color: #555555;
   padding: 10px;
 }
-.skill-content > p {
-  padding-bottom: 20px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: gray;
-}
-.skill-content > div {
+.skill-content > div > div {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 10px;
 }
-.skill-content > div > img {
-  width: 200px;
-  height: 200px;
-  padding: 20px;
+.skill-content > div > div > img {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
   object-fit: contain;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.skill-content img:hover{
+  transform: scale(1.2);
 }
 
 /* career-section */
-#career-section > div:nth-child(1) > p {
+/* #career-section > div:nth-child(1) > p {
   border-bottom: 2px solid burlywood;
 }
 #career-box {
@@ -163,56 +192,110 @@ nav a:hover {
   font-size: 1rem;
   color: gray;
   font-weight: normal;
-}
+} */
 
 /* projects-section */
 #projects-section {
-  background-color: burlywood;
+  background-color: #CDC9C3;
+  padding-bottom: 50px;
 }
 #projects-section > div:nth-child(1) > p {
   border-bottom: 2px solid white;
 }
 .project-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 20px;
-}
-.project-content > h3 {
-  padding: 10px;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-.project-content > h3 > span {
-  font-size: 0.8rem;
-  font-weight: normal;
-}
-.project-content > h3 > span:hover {
-  text-decoration: underline;
-}
-.project-content > div {
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  box-shadow: 3px 3px 5px black;
-}
-.project-content > div > img {
-  width: 500px;
-  height: 300px;
-  object-fit: contain;
-  padding: 20px;
-}
-.project-content > div > div {
-  padding: 20px;
-}
-.project-content > div > div > p {
-  padding: 5px 0;
-}
-.project-content > div > div > p > span {
-  font-weight: 600;
+  padding-top: 50px;
 }
 
+#img-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-img{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.project-img img{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  opacity: 0;
+}
+.project-img img:nth-child(1){
+  opacity: 1;
+}
+#button-box button{
+  width: 100px;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#button-box button:hover{
+  color: #FBF7F0;
+}
+
+.project-detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 400px;
+  padding: 30px;
+}
+
+.project-title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-detail h1{
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+.project-detail h2{
+  color: #555555;
+}
+.project-pdf a{
+  padding: 20px 50px;
+  border: 2px solid #555555;
+  color: #555555;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.project-pdf span{
+  font-size: 0.8rem;
+}
+.project-pdf a:hover{
+  background-color: #555555;
+  color: white;
+}
+
+.project-git{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-git h4{
+  padding-top: 10px;
+}
+.project-git h4 a:hover{
+  color: #D9E4DD;
+}
+
+
 /* Contact */
+#contact-section > div:nth-of-type(1) {
+  padding-top: 30px;
+}
 #contact-section > div:nth-child(1) > p {
   border-bottom: 2px solid gainsboro;
 }
@@ -224,9 +307,17 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.pdf-link {
-  color: gray;
+.sc-event{
+  opacity: 0;
 }
-.pdf-link:hover {
-  color: blue;
+
+@keyframes fadeInUp {
+  0%{
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to{
+    opacity: 1;
+    transform: translateZ(0);
+  }
 }

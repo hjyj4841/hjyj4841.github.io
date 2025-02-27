@@ -12,15 +12,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style/mainStyle.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
   </head>
   <body>
     <header>
+      <div>
+        DongYeop's Portfolio
+      </div>
       <nav>
         <ul>
           <li><a href="#home-section">Home</a></li>
           <li><a href="#about-section">About</a></li>
           <li><a href="#skills-section">Skills</a></li>
-          <li><a href="#career-section">Career & History</a></li>
+          <!-- <li><a href="#career-section">Career & History</a></li> -->
           <li><a href="#projects-section">Projects</a></li>
           <li><a href="#contact-section">Contact</a></li>
         </ul>
@@ -28,64 +32,91 @@
     </header>
     <main>
       <section id="home-section">
-        <div>경험과 성장을 중시하는 신입 개발자</div>
-        <div><span style="color: burlywood">이동엽</span> 입니다.</div>
+        <div>여러 분야에 대한 <span class="main-text">호기심</span>이 새로운 아이디어를 만든다고 생각합니다.</div>
+        <div>다양한 <span class="main-text">경험</span>을 통해 더 넓은 시각으로 문제를 해결하는 신입 개발자</div>
+        <div><span class="main-name">이동엽</span> 입니다.</div>
       </section>
+
       <section id="about-section">
-        <div><p>About Me</p></div>
-        <div>
-          <p>다양한 경험을 통해 성장하는 개발자</p>
-          <p>
-            어렸을 때 부터 개발자라는 직업을 동경하여 고등학교, 대학교와 교육원
-            2회를 통해 교육을 받았습니다.
-          </p>
-          <p>
-            그 과정에서 다양한 기술을 습득하였으며, 팀 프로젝트 경험을 얻을 수
-            있었습니다.
-          </p>
-          <p>
-            이 경험을 통해 더욱 성장하는 개발자가 될 수 있도록 노력 하겠습니다.
-          </p>
+        <div class="sc-event" id="about-title"><p>About Me</p></div>
+        <div class="sc-event" id="about-detail">
+          <pre>
+            안녕하세요. 신입 개발자 <span class="about-text">이동엽</span> 입니다.
+
+            웹 개발자가 되기 위해 고등학교와 대학교에서 교육을 받으며, 
+            두 번의 교육원 수료를 통해 <span class="about-text">프로젝트 경험</span>을 쌓았습니다.
+
+            더 나은 개발자로 성장하기 위해 Back-End와 Front-End 
+            모두에 <span class="about-text">관심</span>을 가지고 공부하고 있습니다.
+
+            Back-End 개발에서는 주로 <span class="about-text">Java</span> 언어를 사용하며, 
+            <span class="about-text">Spring Framework</span>를 활용해 4번의 프로젝트를 진행한 경험이 있습니다.
+
+            Front-End 개발은 최신 트렌드를 반영하여, 
+            <span class="about-text">React</span> 라이브러리를 활용한 프로젝트를 진행한 경험이 있습니다.
+
+            현재는 <span class="about-text">Node.js, Nest.js, TypeScript</span>를 공부하고 있으며,
+            크로스 플랫폼 개발에도 큰 관심을 두고 있어 <span class="about-text">React Native</span>와 
+            <span class="about-text">Flutter</span>를 활용한 모바일 개발 공부도 계획 중입니다.
+          </pre>
         </div>
       </section>
+
       <section id="skills-section" class="middle-section">
-        <div>
+        <div id="skills-title" class="sc-event">
           <p>Skills</p>
         </div>
-        <div class="skill-content">
-          <p>Front-end</p>
-          <div>
-            <img src="../resource/html5.png" alt="html" />
-            <img src="../resource/css3.png" alt="css" />
-            <img src="../resource/javascript.png" alt="javascript" />
-            <img src="../resource/jquery.png" alt="jquery" />
-            <img src="../resource/ajax.png" alt="ajax" />
-            <img src="../resource/react.png" alt="react" />
+        <div id="skills-box" class="sc-event">
+          <div class="skill-content">
+            <div>
+              <p>FrontEnd</p>
+              <div>
+                <img src="./resource/html5.png" alt="html5">
+                <img src="./resource/css3.png" alt="css3">
+                <img src="./resource/javascript.png" alt="javascript">
+                <img src="./resource/jquery.png" alt="jquery">
+                <img src="./resource/ajax.png" alt="ajax">
+                <img src="./resource/react.png" alt="react">
+                <img src="./resource/typescript.png" alt="typescript">
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="skill-content">
-          <p>Back-end</p>
-          <div>
-            <img src="../resource/java.png" alt="java" />
-            <img src="../resource/jspServlet.png" alt="jsp & servlet" />
-            <img src="../resource/springboot.png" alt="spring-boot" />
-            <img src="../resource/mysql.png" alt="mysql" />
-            <img src="../resource/mybatis.png" alt="mybatis" />
-            <img src="../resource/jpa.png" alt="jpa" />
+
+          <div class="skill-content">
+            <div>
+              <p>BackEnd</p>
+              <div>
+                <img src="./resource/java.png" alt="java">
+                <img src="./resource/jspServlet.png" alt="jspServlet">
+                <img src="./resource/springboot.png" alt="springboot">
+                <img src="./resource/jpa.png" alt="jpa">
+                <img src="./resource/mybatis.png" alt="mybatis">
+                <img src="./resource/mysql.png" alt="mysql">
+                <img src="./resource/nodejs.png" alt="nodejs">
+                <img src="./resource/nestjs.jpg" alt="nestjs">
+                <img src="./resource/prisma.jpeg" alt="prisma">
+                <img src="./resource/restapi.png" alt="rest">
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="skill-content">
-          <p>Tools</p>
-          <div>
-            <img src="../resource/vscode.png" alt="vscode" />
-            <img src="../resource/eclipse.png" alt="eclipse" />
-            <img src="../resource/intellij.png" alt="intellij" />
-            <img src="../resource/github.png" alt="github" />
-            <img src="../resource/slack.png" alt="slack" />
+
+          <div class="skill-content">
+            <div>
+              <p>Tools</p>
+              <div>
+                <img src="./resource/eclipse.png" alt="eclipse">
+                <img src="./resource/vscode.png" alt="vscode">
+                <img src="./resource/intellij.png" alt="intellij">
+                <img src="./resource/android.png" alt="android">
+                <img src="./resource/postman.jpg" alt="postman">
+                <img src="./resource/github.png" alt="github">
+                <img src="./resource/slack.png" alt="slack">
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section id="career-section" class="middle-section">
+      <!-- <section id="career-section" class="middle-section">
         <div>
           <p>Career & History</p>
         </div>
@@ -137,114 +168,101 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <section id="projects-section" class="middle-section">
-        <div>
+        <div class="sc-event">
           <p>Projects</p>
         </div>
-        <div class="project-content">
-          <h3>
-            FLOW
-            <span>
-              <a href="https://github.com/hjyj4841/flow-client" target="_blank">
-                https://github.com/hjyj4841/flow-client
+
+        <div class="project-content sc-event">
+          <div id="img-box">
+            <div class="project-img" id="flow-img">
+              <img src="./resource/flow/메인화면.png" alt="flow메인">
+              <img src="./resource/flow/flow_detail.png" alt="flow디테일">
+              <img src="./resource/flow/flow_login.png" alt="flow로그인">
+              <img src="./resource/flow/flow_search.png" alt="flow검색">
+              <img src="./resource/flow/flow_update_user.png" alt="flow회원수정">
+              <img src="./resource/flow/flow_user.png" alt="flow유저">
+            </div>
+            <div id="button-box">
+              <button id="flow-prev">prev</button>
+              <button id="flow-next">next</button>
+            </div>
+          </div>
+          <div class="project-detail">
+            <div class="project-title">
+              <h1>FLOW</h1>
+            <h2>
+              직장인 대상으로 서로의 outfit을
+              공유하는 Social Network Service
+            </h2>
+            </div>
+            <div class="project-pdf">
+              <a
+              href="./resource/flow/FlowPortfolio.pdf"
+              target="_blank">
+                자세히 보기 <span>click!</span>
               </a>
-            </span>
-            &nbsp;
-            <span>
-              <a href="https://github.com/hjyj4841/flow-server" target="_blank">
-                https://github.com/hjyj4841/flow-server
-              </a>
-            </span>
-          </h3>
-          <div>
-            <img src="../resource/flow/메인화면.png" alt="vibe-master-main" />
-            <div>
-              <p>
-                <span>프로젝트 개요</span> : 직장인 대상으로 서로의 outfit을
-                공유하는 Social Network Service 개발
-              </p>
-              <p><span>개발 기간</span> : 2024.09.23 ~ 2024.11.13</p>
-              <p>
-                <span>Front-end</span> : HTML5, CSS3, Javascript, SCSS, React,
-                Redux, React-query
-              </p>
-              <p><span>Back-end</span> : Java, Spring-Boot, JPA, MySql</p>
-              <p>
-                <span>프로젝트 목표</span> : React 라이브러리 사용법 및 RESTful
-                API 방식 숙달
-              </p>
-              <p>
-                <span>담당 업무</span>
-              </p>
-              <p>1. JSON web Token 방식 사용하여 회원 관련 기능 개발</p>
-              <p>2. 회원 정보 조회 및 수정 관련 기능 개발</p>
-              <p>
-                3. Naver / Google / Kakao Open API 활용하여 로그인 및 회원가입
-                기능 개발
-              </p>
-              <p>4. 프로젝트 초기 설정 및 Spring Security 적용</p>
-              <p>5. 일 별 프로젝트 취합 및 총괄</p>
-              <p>
-                <a
-                  href="./resource/flow/FlowPortfolio.pdf"
-                  target="_blank"
-                  class="pdf-link"
-                  >자세히 보기...</a
-                >
-              </p>
+            </div>
+            <div class="project-git">
+              <h3>GitHub</h3>
+              <h4>
+                <a href="https://github.com/hjyj4841/flow-client" target="_blank">
+                  https://github.com/hjyj4841/flow-client
+                </a>
+              </h4>
+              <h4>
+                <a href="https://github.com/hjyj4841/flow-server" target="_blank">
+                  https://github.com/hjyj4841/flow-server
+                </a>
+              </h4>
             </div>
           </div>
         </div>
-        <div class="project-content">
-          <h3>
-            Vibe Master
-            <span
-              ><a href="https://github.com/hjyj4841/vibe" target="_blank">
-                https://github.com/hjyj4841/vibe
-              </a></span
-            >
-          </h3>
 
-          <div>
-            <img
-              src="../resource/vibe-master/메인페이지.png"
-              alt="vibe-master-main"
-            />
-            <div>
-              <p>
-                <span>프로젝트 개요</span> : 사용자 간의 상호작용이 가능한 음악
-                플레이리스트 공유 사이트 개발
-              </p>
-              <p><span>개발 기간</span> : 2024.07.23 ~ 2024.09.13</p>
-              <p>
-                <span>Front-end</span> : HTML5, CSS3, Javascript, JQuery, Ajax
-              </p>
-              <p><span>Back-end</span> : Java, Spring-Boot, MyBatis, MySql</p>
-              <p>
-                <span>프로젝트 목표</span> : Spring Framework 사용법 및 Ajax를
-                사용한 비동기 방식 개발 숙련
-              </p>
-              <p>
-                <span>담당 업무</span>
-              </p>
-              <p>1. Spring security 적용하여 회원관련 기능 개발</p>
-              <p>2. 회원 정보 조회 및 수정 관련 기능 개발</p>
-              <p>3. Ajax 방식을 활용하여 플레이리스트 좋아요 기능 개발</p>
-              <p>4. Spotify Open API 활용하여 곡 검색 및 조회 기능 개발</p>
-              <p>5. 일 별 프로젝트 취합 및 총괄</p>
-              <p>
-                <a
-                  href="./resource/vibe-master/vibeMasterPortfolio.pdf"
-                  target="_blank"
-                  class="pdf-link"
-                  >자세히 보기...</a
-                >
-              </p>
+        <div class="project-content sc-event">
+          <div id="img-box">
+            <div class="project-img" id="vibe-img">
+              <img src="./resource/vibe-master/메인페이지.png" alt="vibe메인">
+              <img src="./resource/vibe-master/검색페이지2.png" alt="vibe검색">
+              <img src="./resource/vibe-master/로그인페이지.png" alt="vibe로그인">
+              <img src="./resource/vibe-master/마이페이지.png" alt="vibe마이페이지">
+              <img src="./resource/vibe-master/상세페이지3.png" alt="vibe상세">
+              <img src="./resource/vibe-master/음악재생.png" alt="vibe음악플레이어">
+              <img src="./resource/vibe-master/플레이리스트생성.png" alt="vibe플리생성">
+              <img src="./resource/vibe-master/회원가입페이지.png" alt="vibe회원가입">
+            </div>
+            <div id="button-box">
+              <button id="vibe-prev">prev</button>
+              <button id="vibe-next">next</button>
+            </div>
+          </div>
+          <div class="project-detail">
+            <div class="project-title">
+              <h1>Vibe Master</h1>
+            <h2>
+              사용자 간의 상호작용이 가능한 음악 플레이리스트 공유 사이트
+            </h2>
+            </div>
+            <div class="project-pdf">
+              <a
+              href="./resource/vibe-master/vibeMasterPortfolio.pdf"
+              target="_blank">
+                자세히 보기 <span>click!</span>
+              </a>
+            </div>
+            <div class="project-git">
+              <h3>GitHub</h3>
+              <h4>
+                <a href="https://github.com/hjyj4841/vibe" target="_blank">
+                  https://github.com/hjyj4841/vibe
+                </a>
+              </h4>
             </div>
           </div>
         </div>
       </section>
+      
       <section id="contact-section" class="middle-section">
         <div>
           <p>Contact</p>
@@ -263,4 +281,5 @@
       </section>
     </main>
   </body>
+  <script src="./script/mainScript.js"></script>
 </html>
