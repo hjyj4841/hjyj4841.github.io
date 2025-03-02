@@ -360,9 +360,6 @@ nav a:hover {
   .skill-content{
     margin: 20px 0;
   }
-  .skill-content > div > div{
-    justify-content: flex-start;
-  }
 
   #img-box{
     justify-content: center;
