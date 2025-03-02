@@ -301,7 +301,7 @@ nav a:hover {
   border-bottom: 2px solid gainsboro;
 }
 .contact-content > p {
-  font-size: 1.3rem;
+  font-size: 1rem;
   padding: 15px;
 }
 .contact-content > p > a:hover {
@@ -320,5 +320,121 @@ nav a:hover {
   to{
     opacity: 1;
     transform: translateZ(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  #home-section > div:nth-child(1),
+  #home-section > div:nth-child(2) {
+    font-size: 2rem;
+  }
+  #home-section > div:nth-child(3) {
+    font-size: 1.5rem;
+  }
+  .skill-content > div > div > img{
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 970px) {
+  header{
+    font-size: 0.8rem;
+  }
+  #home-section > div:nth-child(1),
+  #home-section > div:nth-child(2) {
+    font-size: 1.5rem;
+  }
+  #home-section > div:nth-child(3) {
+    font-size: 1.3rem;
+  }
+
+  #about-section pre{
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  #skills-box{
+    flex-direction: column;
+  }
+  .skill-content{
+    margin: 20px 0;
+  }
+  .skill-content > div > div{
+    justify-content: flex-start;
+  }
+
+  #img-box{
+    justify-content: center;
+  }
+  .project-img{
+    width: 300px;
+    height: 300px;
+  }
+  .project-img img{
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 840px) {
+  header{
+    justify-content: center;
+  }
+  nav{
+    display: none;
+  }
+  
+  .project-content{
+    flex-direction: column;
+    border-bottom: 1px solid black;
+  }
+}
+
+@media (max-width: 720px) {
+  .line-enter{
+    display: block;
+    text-align: center;
+    line-height: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #about-section pre{
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+}
+@media (max-width: 530px){
+  .project-detail h2{
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 460px) {
+  #home-section > div:nth-child(1),
+  #home-section > div:nth-child(2) {
+    font-size: 1rem;
+  }
+  #home-section > div:nth-child(3) {
+    font-size: 1rem;
+  }
+
+  #about-section pre{
+    font-size: 0.6rem;
+    line-height: 1.5rem;
+  }
+
+  .project-detail h1{
+    font-size: 1rem;
+  }
+  .project-detail h2{
+    font-size: 0.6rem;
+  }
+  .project-pdf a{
+    font-size: 0.8rem;
+    padding: 15px 35px;
+  }
+  .project-git h4{
+    font-size: 0.8rem;
   }
 }
